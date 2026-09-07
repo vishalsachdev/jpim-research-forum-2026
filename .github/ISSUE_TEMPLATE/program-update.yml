@@ -1,0 +1,49 @@
+name: Program update or correction
+description: Submit a revised PDF or report a change to the conference schedule.
+title: "[Program update]: "
+labels:
+  - program-update
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the JPIM Research Forum program accurate. You can drag and drop a revised PDF into the field below.
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Type of update
+      options:
+        - Revised program PDF
+        - Session time or room change
+        - Presenter or author correction
+        - Session title or topic correction
+        - Cancellation or replacement
+        - Other program change
+    validations:
+      required: true
+  - type: textarea
+    id: pdf
+    attributes:
+      label: Revised PDF or source
+      description: Drag and drop the newest PDF here, or provide a link to the authoritative source.
+      placeholder: Drop the revised PDF here or paste a source link.
+  - type: textarea
+    id: details
+    attributes:
+      label: What changed?
+      description: Include the affected day, time, room, title, and people when applicable.
+      placeholder: Sunday, 10:50 AM, Capitol Ballroom South — describe the correction…
+    validations:
+      required: true
+  - type: input
+    id: effective_date
+    attributes:
+      label: Effective date or PDF version date
+      placeholder: YYYY-MM-DD
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked this change against an organizer-provided source.
+          required: true
