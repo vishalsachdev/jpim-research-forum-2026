@@ -1,0 +1,42 @@
+name: Presenter profile or session materials
+description: Add a verified Scholar profile, paper link, slides, or other presenter-provided resource.
+title: "[Presenter]: "
+labels:
+  - presenter-update
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Presenters and co-authors can use this form to improve their session listing. Please submit only links you own or are authorized to share.
+  - type: input
+    id: name
+    attributes:
+      label: Name as shown in the program
+      placeholder: Full name
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper title or ID
+      placeholder: Paper 129 — Attentional Orchestration…
+    validations:
+      required: true
+  - type: input
+    id: scholar
+    attributes:
+      label: Verified Google Scholar profile
+      description: Paste the citations profile URL, not a general name-search URL.
+      placeholder: https://scholar.google.com/citations?user=...
+  - type: textarea
+    id: materials
+    attributes:
+      label: Optional session materials
+      description: Add public links to a paper, slides, code, data, or a professional profile. Briefly label each link.
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Confirmation
+      options:
+        - label: I am this person, a co-author, or authorized to submit these links.
+          required: true
