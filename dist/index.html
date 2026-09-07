@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102238">
+  <meta name="description" content="Search and browse the JPIM Research Forum 2026 program by topic, presenter, day, and room.">
+  <title>JPIM Research Forum 2026 Program</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="event-mark" aria-hidden="true">JPIM<span>RF</span></div>
+      <div class="event-title">
+        <h1>Research Forum 2026</h1>
+        <p>October 10–11 · Atlanta</p>
+      </div>
+      <div class="header-actions">
+        <a class="header-action venue-link" href="https://www.google.com/maps/search/?api=1&query=Courtland+Grand+Hotel+165+Courtland+St+NE+Atlanta+GA+30303" target="_blank" rel="noreferrer"><span class="action-label">Venue</span> <span aria-hidden="true">↗</span></a>
+        <a class="header-action contribute-link" href="https://github.com/vishalsachdev/jpim-research-forum-2026/issues/new/choose" target="_blank" rel="noreferrer"><span class="action-label">Suggest a change</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="control-panel" aria-label="Find sessions">
+      <label class="search-box" for="search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <span class="sr-only">Search the program</span>
+        <input id="search" type="search" autocomplete="off" placeholder="Search titles, people, topics, paper IDs…">
+        <kbd>/</kbd>
+      </label>
+
+      <div class="day-tabs" role="group" aria-label="Choose a day">
+        <button class="day-tab active" type="button" data-day="all">All sessions</button>
+        <button class="day-tab" type="button" data-day="Saturday">Sat · Oct 10</button>
+        <button class="day-tab" type="button" data-day="Sunday">Sun · Oct 11</button>
+        <button class="day-tab saved-tab" type="button" data-day="saved"><span aria-hidden="true">★</span> Saved <span id="saved-count">0</span></button>
+      </div>
+
+      <div class="filter-grid">
+        <label>Topic<select id="topic-filter"><option value="all">All topics</option></select></label>
+        <label>Presenter<select id="presenter-filter"><option value="all">All presenters</option></select></label>
+        <label>Room<select id="room-filter"><option value="all">All rooms</option></select></label>
+        <label>Session type<select id="type-filter"><option value="all">All types</option></select></label>
+      </div>
+
+      <div class="results-summary" aria-live="polite">
+        <p id="result-count"></p>
+        <button id="clear-filters" type="button">Clear filters</button>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule" aria-label="Program schedule"></section>
+
+    <div id="empty-state" class="empty-state" hidden>
+      <div aria-hidden="true">⌕</div>
+      <h2>No sessions found</h2>
+      <p>Try a broader search or clear one of the filters.</p>
+      <button type="button" id="empty-clear">Show all sessions</button>
+    </div>
+  </main>
+
+  <template id="session-template">
+    <article class="session-card">
+      <div class="card-topline">
+        <span class="session-type"></span>
+        <button class="save-button" type="button" aria-label="Save session" title="Save session"><span aria-hidden="true">☆</span></button>
+      </div>
+      <h3 class="session-title"></h3>
+      <p class="presenter-line"><span class="presenter-name"></span></p>
+      <p class="room-line"></p>
+      <div class="session-actions">
+        <details class="calendar-menu">
+          <summary>Add to calendar</summary>
+          <div class="calendar-options"></div>
+        </details>
+        <a class="github-session-link" target="_blank" rel="noreferrer">GitHub details <span aria-hidden="true">↗</span></a>
+      </div>
+      <details class="detail-panel">
+        <summary>Session details</summary>
+        <dl class="session-details"></dl>
+      </details>
+    </article>
+  </template>
+
+  <footer>
+    <p>Program dated September 7, 2026. Times shown in Atlanta local time. <a href="https://www.pdma.org/page/annual-jpim-research-forum" target="_blank" rel="noreferrer">Official conference page</a> · <a href="https://github.com/vishalsachdev/jpim-research-forum-2026" target="_blank" rel="noreferrer">Contributions welcome</a>.</p>
+    <p>Courtland Grand Hotel · 165 Courtland St NE, Atlanta, GA 30303</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="special.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
