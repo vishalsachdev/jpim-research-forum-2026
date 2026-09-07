@@ -182,7 +182,7 @@ kbd { color: var(--muted); background: var(--wash); border: 1px solid var(--line
 .room-line { margin: 5px 0 0; color: var(--muted); font-size: .82rem; }
 .session-actions { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
 .calendar-menu { position: relative; }
-.calendar-menu summary, .github-session-link { color: var(--blue-dark); font-size: .82rem; font-weight: 750; cursor: pointer; }
+.calendar-menu summary, .copy-session-link { color: var(--blue-dark); font-size: .82rem; font-weight: 750; cursor: pointer; }
 .calendar-menu summary { list-style: none; border: 1px solid #c8d7e1; border-radius: 8px; padding: 6px 9px; background: #fff; }
 .calendar-menu summary::-webkit-details-marker { display: none; }
 .calendar-menu summary::before { content: "+"; margin-right: 5px; }
@@ -190,7 +190,8 @@ kbd { color: var(--muted); background: var(--wash); border: 1px solid var(--line
 .calendar-options { position: absolute; z-index: 5; left: 0; top: calc(100% + 6px); min-width: 190px; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: var(--shadow); }
 .calendar-options a { display: block; padding: 8px 9px; color: var(--ink-2); text-decoration: none; border-radius: 6px; font-size: .84rem; white-space: nowrap; }
 .calendar-options a:hover { background: var(--blue-pale); color: var(--blue-dark); }
-.github-session-link { margin-left: auto; text-decoration: none; }
+.copy-session-link { margin-left: auto; padding: 6px 0; border: 0; background: transparent; }
+.copy-session-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .detail-panel { margin-top: 12px; border-top: 1px solid #e8edf2; padding-top: 9px; }
 .detail-panel > summary { color: var(--blue-dark); font-size: .82rem; font-weight: 750; cursor: pointer; }
 .session-details { margin: 11px 0 0; display: grid; grid-template-columns: 82px minmax(0,1fr); gap: 7px 9px; font-size: .8rem; overflow-wrap: anywhere; }
