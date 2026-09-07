@@ -3,7 +3,7 @@
 A searchable, mobile-friendly browser for the JPIM Research Forum in Atlanta on October 10–11, 2026.
 
 - [Official JPIM Research Forum page](https://www.pdma.org/page/annual-jpim-research-forum)
-- [Searchable program site](https://jpim-research-forum-2026.ggp577stkp.chatgpt.site)
+- [Searchable program site](https://vishalsachdev.github.io/jpim-research-forum-2026/)
 - [Conference venue and registration details](https://www.pdma.org/events/EventDetails.aspx?id=2036013)
 
 ## Features
