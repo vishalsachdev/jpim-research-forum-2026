@@ -130,8 +130,19 @@
     const presenterName = card.querySelector('.presenter-name');
     if (item.presenter) presenterName.append(item.type === 'Social' ? document.createTextNode(item.presenter) : personLink(item.presenter));
     card.querySelector('.room-line').textContent = item.room || 'Forum-wide';
-    const sourceLink = card.querySelector('.github-session-link');
-    sourceLink.href = pageUrl(item);
+    const copyLink = card.querySelector('.copy-session-link');
+    copyLink.addEventListener('click', async () => {
+      const url = pageUrl(item);
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch (_) {
+        const field = document.createElement('textarea');
+        field.value = url; field.setAttribute('readonly', ''); field.style.position = 'fixed'; field.style.opacity = '0';
+        document.body.append(field); field.select(); document.execCommand('copy'); field.remove();
+      }
+      copyLink.textContent = 'Copied!';
+      window.setTimeout(() => { copyLink.textContent = 'Copy session link'; }, 1600);
+    });
     const calendarOptions = card.querySelector('.calendar-options');
     calendarLinks(item).forEach(([label,href,download]) => {
       const link = document.createElement('a'); link.href = href; link.textContent = label;
