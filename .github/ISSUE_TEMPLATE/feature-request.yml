@@ -1,0 +1,37 @@
+name: Feature request
+description: Suggest an improvement that would make the program easier for attendees to use.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve the attendee experience.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would this improve?
+      placeholder: Describe the attendee need or problem.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Suggested change
+      placeholder: Describe how you think it should work.
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Where would this be most useful?
+      options:
+        - Phone
+        - Desktop or laptop
+        - Both
+        - Not device-specific
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, examples, and accessibility considerations are welcome.
