@@ -12,5 +12,5 @@ window.PROGRAM_SPECIAL = [
   { day:'Saturday', date:'2026-10-10', start:'19:00', end:'21:00', type:'Social', title:'Social Dinner', presenter:'TWO Urban Licks', coauthors:'Add-on event · $120 · registration deadline September 18', room:'820 Ralph McGill Blvd NE, Atlanta' },
   { day:'Sunday', date:'2026-10-11', start:'10:15', end:'10:45', type:'Break', title:'Coffee Break' },
   { day:'Sunday', date:'2026-10-11', start:'12:30', end:'13:30', type:'Meal', title:'Lunch' },
-  { day:'Sunday', date:'2026-10-11', start:'15:45', end:'16:00', type:'Plenary', title:'Winners of the PDMA Global Student Innovation Challenge and Closing', room:'Capitol Ballroom North' }
+  { day:'Sunday', date:'2026-10-11', start:'15:30', end:'15:45', type:'Plenary', title:'Winners of the PDMA Global Student Innovation Challenge and Closing', room:'Capitol Ballroom North' }
 ];

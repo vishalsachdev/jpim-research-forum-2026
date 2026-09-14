@@ -24,4 +24,4 @@ Presenters can submit their verified Google Scholar profile and optional session
 
 ## Source
 
-The current schedule was transcribed from the program dated September 7, 2026. Times are shown in Atlanta local time.
+The current schedule was transcribed from the program dated September 14, 2026. Times are shown in Atlanta local time. Organizer PDFs are kept in `sources/`, and each revision's change report is in `docs/changelog/`.
