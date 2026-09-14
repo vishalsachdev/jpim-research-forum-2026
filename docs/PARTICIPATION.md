@@ -47,6 +47,19 @@ When an organizer attaches a new PDF, an automated job can:
 
 An organizer reviews and merges the pull request. Publication should happen only after the structured checks pass.
 
+Steps 1 to 4 are scripted. They need only Python 3 and poppler's `pdftotext`:
+
+```sh
+# 1-4: compare the new PDF with the published data and write the change report
+python3 scripts/diff_program.py dist/data.js sources/JPIM-RF-2026-Program-YYYYMMDD.pdf \
+  --new-label "program dated YYYY-MM-DD" -o docs/changelog/YYYY-MM-DD-program-update.md
+# regenerate the published data from the new PDF
+python3 scripts/parse_program.py sources/JPIM-RF-2026-Program-YYYYMMDD.pdf -o dist/data.js
+python3 -m unittest discover -s tests
+```
+
+The parser reads only the parallel-session pages. Plenaries, breaks, the closing session and the social dinner are kept in `dist/special.js` and edited by hand, so check the PDF's overview and plenary pages separately. Any word the parser cannot place in a session cell is printed on stderr. `diff_program.py` exits with status 1 when the new data fails a structural check.
+
 ### Identity and profile assistance
 
 For names without a verified profile, AI can propose candidate Google Scholar profiles using name, affiliation, paper title, and co-author overlap. Because names are ambiguous, the system should record a direct profile URL only after presenter or organizer confirmation. Until then, the site should link to Google Scholar's author search for that name.
